@@ -91,3 +91,27 @@ if (typeof valor === 'number') {
 else {
     console.log(typeof valor);
 }
+//Só podemos utilizar Null caso definimo anteriormente
+//em um tipo união |
+//                 v
+let altura;
+altura = null;
+const contato1 = {
+    nome: 'Fulano',
+    tel1: '2345678',
+    tel2: null
+};
+let contaBancaria = {
+    saldo: 3456,
+    depositar(valor) {
+        this.saldo += valor;
+    }
+};
+let correntista = {
+    nome: 'Ana Silva',
+    contaBancaria: contaBancaria,
+    contatos: ['34567890', '98765432']
+};
+correntista.contaBancaria.depositar(3000);
+console.log(correntista);
+//# sourceMappingURL=tipos.js.map

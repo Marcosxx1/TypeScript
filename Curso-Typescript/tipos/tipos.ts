@@ -149,5 +149,53 @@ if(typeof valor === 'number') {
     console.log(typeof valor)
 }
 
+//Só podemos utilizar Null caso definimo anteriormente
+//em um tipo união |
+//                 v
+let altura: number | null;
 
+altura = null;
+
+type Contato = {
+    nome: string,
+    tel1: string,
+    tel2: string | null
+}
+
+const contato1: Contato = {
+    nome: 'Fulano',
+    tel1: '2345678',
+    tel2: null
+}
+
+
+// Desafio
+
+
+type ContaBancaria = {
+    saldo: number;
+    depositar: (valor: number)  => void;
+}
+
+type Correntista = {
+    nome: string;
+    contaBancaria: ContaBancaria;
+    contatos: string[]
+}
+
+let contaBancaria: ContaBancaria = {
+    saldo: 3456,
+    depositar(valor) {
+        this.saldo += valor
+    }
+}
+ 
+let correntista: Correntista = {
+    nome: 'Ana Silva',
+    contaBancaria: contaBancaria,
+    contatos: ['34567890', '98765432']
+}
+ 
+correntista.contaBancaria.depositar(3000)
+console.log(correntista)
  
