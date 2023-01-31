@@ -20,4 +20,4 @@ sem se preocupar com escopo global */
 console.log(Geometria.Area.Circunferencia(10));
 console.log(Geometria.Area.Retangulo(10, 23))
 
-console.log(PI);
+//console.log(PI);
